@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Emlak.MVC", "Emlak.MVC\Emlak.MVC.csproj", "{D5B2259F-F7D2-4AC1-9957-42F3A1DE9464}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Emlak.DAL", "Emlak.DAL\Emlak.DAL.csproj", "{C6BE87AB-711D-49BB-8CF3-128E79425EFA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Emlak.BLL", "Emlak.BLL\Emlak.BLL.csproj", "{D4327B7D-5EB4-49A2-B68D-5868D8F348BC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Emlak.ENTITY", "Emlak.ENTITY\Emlak.ENTITY.csproj", "{13909B70-2DE9-4807-AA67-545EA127EE09}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Emlak.Thema", "Emlak.Thema\Emlak.Thema.csproj", "{52FE082C-EAC7-4325-AB03-DBB3EE0B91E0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Emlak.AdminThema", "Emlak.AdminThema\Emlak.AdminThema.csproj", "{A3DC4771-0487-48CD-BC42-C7939F4FD68B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D5B2259F-F7D2-4AC1-9957-42F3A1DE9464}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5B2259F-F7D2-4AC1-9957-42F3A1DE9464}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5B2259F-F7D2-4AC1-9957-42F3A1DE9464}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5B2259F-F7D2-4AC1-9957-42F3A1DE9464}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6BE87AB-711D-49BB-8CF3-128E79425EFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6BE87AB-711D-49BB-8CF3-128E79425EFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6BE87AB-711D-49BB-8CF3-128E79425EFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6BE87AB-711D-49BB-8CF3-128E79425EFA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4327B7D-5EB4-49A2-B68D-5868D8F348BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4327B7D-5EB4-49A2-B68D-5868D8F348BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4327B7D-5EB4-49A2-B68D-5868D8F348BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4327B7D-5EB4-49A2-B68D-5868D8F348BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13909B70-2DE9-4807-AA67-545EA127EE09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13909B70-2DE9-4807-AA67-545EA127EE09}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13909B70-2DE9-4807-AA67-545EA127EE09}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13909B70-2DE9-4807-AA67-545EA127EE09}.Release|Any CPU.Build.0 = Release|Any CPU
+		{52FE082C-EAC7-4325-AB03-DBB3EE0B91E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52FE082C-EAC7-4325-AB03-DBB3EE0B91E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52FE082C-EAC7-4325-AB03-DBB3EE0B91E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52FE082C-EAC7-4325-AB03-DBB3EE0B91E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3DC4771-0487-48CD-BC42-C7939F4FD68B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3DC4771-0487-48CD-BC42-C7939F4FD68B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3DC4771-0487-48CD-BC42-C7939F4FD68B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3DC4771-0487-48CD-BC42-C7939F4FD68B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

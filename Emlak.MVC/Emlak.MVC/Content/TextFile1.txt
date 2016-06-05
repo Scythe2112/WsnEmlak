@@ -1,0 +1,214 @@
+﻿
+<div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
+
+    <ul id="myTab" class="nav nav-tabs" role="tablist">
+
+        <li role="presentation">
+            <a href="#home" role="tab" id="home-tab" data-toggle="tab" aria-controls="home"></a>
+        </li>
+
+        <li role="presentation" class="active">
+            <a href="#ilanlarim" role="tab" id="ilanlarim-tab" data-toggle="tab" aria-controls="ilanlarim">İlanlarim</a>
+        </li>
+
+        <li role="presentation">
+            <a href="#ilanekle" role="tab" id="ilanekle-tab" data-toggle="tab" aria-controls="ilanekle">İlan Ekle</a>
+        </li>
+
+        <li role="presentation">
+            <a href="#passwordChange" role="tab" id="passwordChange-tab" data-toggle="tab" aria-controls="passwordChange">Profil Düzenle</a>
+        </li>
+    </ul>
+    <div id="myTabContent" class="tab-content">
+        <div role="tabpanel" class="tab-pane fade" id="home" aria-labelledby="home-tab">
+            <p></p>
+        </div>
+        <div role="tabpanel" class="tab-pane fade in active" id="ilanlarim" aria-labelledby="ilanlarim-tab">
+
+            <table class="table">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Konutlar.First().Baslik)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Konutlar.First().EklenmeTarihi)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Konutlar.First().Fiyat)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Konutlar.First().YayindaMi)
+                    </th>
+                    <th>
+                    </th>
+                </tr>
+
+                @foreach (var item in Model.Konutlar)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Baslik)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.EklenmeTarihi)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Fiyat)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.YayindaMi)
+                    </td>
+                </tr>
+                }
+            </table>
+            @Html.PagedListPager(Model.Konutlar, page => Url.Action("MyProfile", new { page }),
+    new PagedListRenderOptions()
+    {
+        Display = PagedListDisplayMode.Always,
+        DisplayPageCountAndCurrentLocation = true,
+        DisplayItemSliceAndTotal = true
+    })
+
+            Toplam İlan Sayısı: @Model.Konutlar.TotalItemCount
+        </div>
+
+        <div role="tabpanel" class="tab-pane fade" id="ilanekle" aria-labelledby="ilanekle-tab">
+            @using (Html.BeginForm())
+            {
+            @Html.AntiForgeryToken()
+
+            <div class="form-horizontal">
+                <h4>Konut Ekle</h4>
+                <hr />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Konut.Adres, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Konut.Adres, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Konut.Adres, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Konut.Fiyat, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Konut.Fiyat, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Konut.Fiyat, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Konut.Metrekare, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Konut.Metrekare, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Konut.Metrekare, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Konut.Aciklama, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Konut.Aciklama, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Konut.Aciklama, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Konut.Enlem, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Konut.Enlem, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Konut.Enlem, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Konut.Boylam, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Konut.Boylam, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Konut.Boylam, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Konut.Baslik, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Konut.Baslik, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Konut.Baslik, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Konut.IlanTuruID, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        <select id="IlanTurleri" class="form-control">
+                            @foreach (var item in Model.ComboboxData.IlanTurleri)
+                                {
+                                <option value="@item.ID">@item.Ad</option>
+                                }
+                        </select>
+                        @Html.ValidationMessageFor(model => model.Konut.IlanTuruID, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Konut.IsitmaTuruID, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        <select id="IsitmaSistemleri" class="form-control">
+                            @foreach (var item in Model.ComboboxData.IsitmaSistemleri)
+                                {
+                                <option value="@item.ID">@item.Ad</option>
+                                }
+                        </select>
+                        @Html.ValidationMessageFor(model => model.Konut.IsitmaTuruID, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Konut.KatTuruID, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        <select id="KatTurleri" class="form-control">
+                            @foreach (var item in Model.ComboboxData.KatTurleri)
+                                {
+                                <option value="@item.ID">@item.Tur</option>
+                                }
+                        </select>
+                        @Html.ValidationMessageFor(model => model.Konut.KatTuruID, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Kaydet" class="btn btn-default" />
+                    </div>
+                </div>
+            </div>
+            }
+        </div>
+
+        <div role="tabpanel" class="tab-pane fade" id="passwordChange" aria-labelledby="passwordChange-tab">
+
+  
+
+
+
+        </div>
+    </div>
+</div>
+
+
+            ComboboxDataModel cmbData = new ComboboxDataModel();
+            cmbData.IlanTurleri = ilanTurleriR.GetAll().Select(i => new IlanTurleriData
+            {
+                Ad = i.Ad,
+                ID = i.ID
+            }).ToList();
+            cmbData.IsitmaSistemleri = isitmaSisR.GetAll().Select(i => new IsitmaSistemleriData
+            {
+                Ad = i.Ad,
+                ID = i.ID
+            }).ToList();
+            cmbData.KatTurleri = katTurleriR.GetAll().Select(k => new KatTurleriData
+            {
+                Tur = k.Tur,
+                ID = k.ID
+            }).ToList();

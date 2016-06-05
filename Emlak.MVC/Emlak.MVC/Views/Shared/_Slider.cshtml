@@ -1,0 +1,45 @@
+﻿<script src="~/js/responsiveslides.min.js"></script>
+<script>
+                    // You can also use "$(window).load(function() {"
+                    $(function () {
+                        // Slideshow 3
+                        $("#slider3").responsiveSlides({
+                            auto: true,
+                            pager: true,
+                            nav: false,
+                            speed: 2000,
+                            namespace: "callbacks",
+                            before: function () {
+                                $('.events').append("<li>before event fired.</li>");
+                            },
+                            after: function () {
+                                $('.events').append("<li>after event fired.</li>");
+                            }
+                        });
+
+                    });
+</script>
+<!--//End-slider-script-->
+<div id="top" class="callbacks_container">
+    <ul class="rslides" id="slider3">
+        <li>
+            <div class="banner-text-info">
+                <h2>RÜYALARINDA Kİ EVİ BULMAYA HAZIR MISIN!</h2>
+                <h3>Binlerce ev ilanı arasında hayal ettiğin o muhteşem evi bulmak artık çok kolay. Rüyalarında ki ev sana bir tık uzakta ! </h3>
+                <div class="more">
+                    <a href="@Url.Action("Search","Home")" class="button-pipaluk button--inverted"> Daha Fazlası için Tıkla !</a>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="banner-text-info">
+                <h2>TÜRKİYE'NİN DÖRT BİR TARAFINDAN BİNLERCE EV İLANI</h2>
+                <h3>Kiralık, Günlük Kiralık, Satılık binler ev ilanı ile Türkiye'nin En Yeni ve En Dinamik Emlak sitesi hizmetinizde. </h3>
+                <div class="more">
+                    <a href="@Url.Action("Search","Home")" class="button-pipaluk button--inverted"> Daha Fazlası için Tıkla !</a>
+                </div>
+            </div>
+        </li>
+       
+    </ul>
+</div>

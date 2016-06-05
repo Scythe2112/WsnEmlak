@@ -1,0 +1,111 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>EMLAK PROJESİ</title>
+    <!--mobile apps-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Emlak, İstanbul, Kiralık Ev, Satılık Ev, Günlük Kiralık Ev, Ucuz Evler" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!--mobile apps-->
+    <!--Custom Theme files -->
+    <link href="~/css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
+    <link href="~/css/style.css" type="text/css" rel="stylesheet" media="all">
+    <link rel="stylesheet" href="~/css/prettySticky.css" type="text/css">
+    <!-- //Custom Theme files -->
+    <!-- js -->
+    <script src="~/js/jquery-1.11.1.min.js"></script>
+    <!-- //js -->
+    <!-- start-smoth-scrolling-->
+    <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+            $(".scroll").click(function (event) {
+                event.preventDefault();
+
+                $('html,body').animate({ scrollTop: $(this.hash).offset().top }, 1000);
+            });
+        });
+    </script>
+    <!--//end-smoth-scrolling-->
+</head>
+<body>
+    <!--banner-->
+    <div id="home">
+        <!--navigation-->
+        @Html.Partial("_Navigator")
+        <!--//navigation-->
+    </div>
+    <!--//banner-->
+    <!--welcome-->
+    <div class="welcome">
+        <div class="container">
+            @RenderBody()
+        </div>
+    </div>
+    <!--//welcome-->
+    <!--footer-->
+    <div class="footer">
+        <div class="container">
+            <div class="col-md-4 footer-grids">
+                <h3>Review</h3>
+                <p>Sed ut turpis elit ullamcorper in auctor non, accumsan vel lacus nulla auctor cursus nunc. Maecenas ultricies dolor in urna tempus, id egestas erat finibus  interdum lectus eget scelerisque.</p>
+            </div>
+            <div class="col-md-3 footer-grids">
+                <h3>Contact Me</h3>
+                <p>
+                    123 NewYork City USA.<br>
+                    <span>Office: 908-0000</span>
+                </p>
+                <div class="footer-bottom">
+                    <a href="#"><span>Facebook</span></a>
+                    <a href="#"><span>Pinterest</span></a>
+                    <a href="#"><span>LinkedIn </span></a>
+                    <a href="#"><span>Behance</span></a>
+                </div>
+            </div>
+            <div class="col-md-5 footer-grids">
+                <h3>Flickr</h3>
+                <a class="footer-img" href="single.html"> <img src="~/images/f1.jpg" alt="" /></a>
+                <a class="footer-img" href="single.html"> <img src="~/images/f2.jpg" alt="" /></a>
+                <a class="footer-img" href="single.html"> <img src="~/images/f3.jpg" alt="" /></a>
+            </div>
+            <div class="clearfix"> </div>
+            <div class="footer-copy">
+                <p>© 2016 Rental. All rights reserved | Design by <a href="http://w3layouts.com">W3layouts</a></p>
+            </div>
+        </div>
+    </div>
+    <!--//footer-->
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="~/js/bootstrap.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            $(window).scroll(function () {
+                var scroll = $(window).scrollTop() + 90;
+                var currentArea = $("section").filter(function () {
+                    return scroll <= $(this).offset().top + $(this).height();
+                });
+                $(".nav a").removeClass("selected");
+                $(".nav a[href=#" + currentArea.attr("id") + "]").addClass("selected");
+
+                if ($(window).scrollTop() > 0) {
+                    $('nav').addClass("navScroll");
+                    $('img.logo').addClass("logoScroll");
+                    $('div.menu').addClass("menuScroll");
+                }
+            });
+
+        });
+
+    </script>
+
+</body>
+</html>

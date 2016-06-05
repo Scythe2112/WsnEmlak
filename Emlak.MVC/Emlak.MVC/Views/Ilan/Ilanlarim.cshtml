@@ -1,0 +1,29 @@
+﻿@model IEnumerable<Emlak.ENTITY.Entities.Konut>
+
+@{
+    ViewBag.Title = "Ilanlarim";
+    Layout = "~/Views/Shared/_LayoutEmptyBody.cshtml";
+}
+   <!--gallery-->
+    <div class="gallery">
+        <div class="container">
+            <h4 class="title">Ilanlarim</h4>
+            <div class="gallery-grids">
+@foreach (var item in Model)
+{
+                <div class="col-md-4 port-grids view view-tenth">
+                    <a class="example-image-link" href='' data-lightbox="example-set" data-title="">
+                        <img src='../../images/ilanlar/@item.Fotograflar.Select(f=> f.Yol).FirstOrDefault()' class="img-responsive" alt="" />
+                        <div class="mask">
+                            <p>@item.Baslik</p>
+                        </div>
+                    </a>
+                </div>
+}
+                <div class="clearfix"> </div>
+
+            </div>
+        </div>
+    </div>
+    <!--//gallery-->
+

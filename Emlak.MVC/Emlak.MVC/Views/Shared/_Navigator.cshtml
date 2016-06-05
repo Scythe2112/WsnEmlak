@@ -1,0 +1,82 @@
+﻿<div class="top-nav">
+    <nav>
+        <div class="container">
+            <div class="navbar-header logo">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <h1><a href="@Url.Action("Index","Home")">Wsn Emlak</a></h1>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-right">
+                    <li><a href="@Url.Action("Index","Home")" class="link-kumya active scroll"><span data-letters="Anasayfa">Anasayfa</span></a></li>
+                    <li><a href="@Url.Action("Index","Home")" class="link-kumya"><span data-letters="Emlak Haberleri">Emlak Haberleri</span></a></li>
+                    <li><a href="@Url.Action("Index","Home")" class="link-kumya"><span data-letters="Soru/Cevap">Soru/Cevap</span></a></li>
+                    <li><a href="@Url.Action("Index","Home")" class="link-kumya"><span data-letters="İletişim">İletişim</span></a></li>
+                    @if (Request.IsAuthenticated)
+                    {
+                        <li role="presentation" class="dropdown">
+                            <a href="#" id="myTabDrop1" class="dropdown-toggle" data-toggle="dropdown" aria-controls="myTabDrop1-contents">Hoşgeldiniz : <p id="userName" style="color:black;">@User.Identity.Name</p> <span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu" aria-labelledby="myTabDrop1" id="myTabDrop1-contents">
+                                @if (HttpContext.Current.User.IsInRole("Admin"))
+                                {
+                                    <li>
+                                        <a href="@Url.Action("Index","Admin")" class="link-kumya" tabindex="-1" role="tab" id="dropdown1-tab" data-toggle="tab" aria-controls="dropdown1">
+                                            <span data-letters="Yönetim">Yönetim</span>
+                                        </a>
+                                    </li>
+                                }
+
+                                <li>
+                                    <a href="@Url.Action("MyProfile", "Account")" class="link-kumya" tabindex="-1" role="tab" id="dropdown2-tab" data-toggle="tab" aria-controls="dropdown2">
+                                        <span data-letters="Profil Sayfam">Profil Sayfam</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("Ilanlarim", "Ilan")" class="link-kumya" tabindex="-1" role="tab" id="dropdown3-tab" data-toggle="tab" aria-controls="dropdown3">
+                                        <span data-letters="İlanlarım">İlanlarım</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("IlanEkle", "Ilan")" class="link-kumya" tabindex="-1" role="tab" id="dropdown4-tab" data-toggle="tab" aria-controls="dropdown4">
+                                        <span data-letters="İlan Ekle">İlan Ekle</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("Logout", "Account")" class="link-kumya" tabindex="-1" role="tab" id="dropdown5-tab" data-toggle="tab" aria-controls="dropdown5">
+                                        <span data-letters="Çıkış Yap">Çıkış Yap</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Kullanıcı Girişi<span class="caret"></span></a>
+                            <ul class="nav navbar-right dropdown-menu">
+                                <li>
+                                    <a href="@Url.Action("Login", "Account")" class="link-kumya" tabindex="-1"   data-toggle="tab">
+                                        <span data-letters="Giriş Yap">Giriş</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("Register", "Account")" class="link-kumya" tabindex="-1"   data-toggle="tab">
+                                        <span data-letters="Üye Ol">Üye Ol</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    }
+
+                </ul>
+                <div class="clearfix"> </div>
+            </div>
+        </div>
+    </nav>
+</div>
+
